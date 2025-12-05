@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=240, height=282, user-scalable=no, initial-scale=1.0">
+    <title>Dev Tasks</title>
+  <script type="module" crossorigin src="./assets/main-D7ehej6k.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-CFBxcp7S.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Main view: Task list -->
+        <div id="mainView" class="view active">
+            <div class="header">
+                <h1>Dev Tasks</h1>
+                <div class="sort-controls">
+                    <button id="sortBtn" class="icon-btn">📅</button>
+                    <button id="addBtn" class="icon-btn add-btn">+</button>
+                </div>
+            </div>
+            
+            <div id="taskList" class="task-list">
+                <!-- Tasks will be rendered here -->
+            </div>
+            
+            <div class="empty-state" id="emptyState">
+                <p>No tasks yet</p>
+                <p class="hint">Press + to add a task</p>
+            </div>
+        </div>
+
+        <!-- Add task view -->
+        <div id="addView" class="view">
+            <div class="header">
+                <h2>Add Task</h2>
+                <button id="cancelAddBtn" class="icon-btn">✕</button>
+            </div>
+            
+            <div class="form-content">
+                <div class="voice-status" id="voiceStatus">
+                    <div class="pulse"></div>
+                    <p id="voiceText">Press side button to speak</p>
+                </div>
+                
+                <div class="task-preview" id="taskPreview">
+                    <div class="preview-item">
+                        <span class="label">Task:</span>
+                        <span id="previewTask">—</span>
+                    </div>
+                    <div class="preview-item">
+                        <span class="label">Project:</span>
+                        <span id="previewProject">—</span>
+                    </div>
+                    <div class="preview-item">
+                        <span class="label">Org:</span>
+                        <span id="previewOrg">—</span>
+                    </div>
+                    <div class="preview-item">
+                        <span class="label">Due:</span>
+                        <span id="previewDue">—</span>
+                    </div>
+                </div>
+                
+                <button id="confirmTaskBtn" class="primary-btn" disabled>Confirm Task</button>
+            </div>
+        </div>
+
+        <!-- Edit task view -->
+        <div id="editView" class="view">
+            <div class="header">
+                <h2>Edit Task</h2>
+                <button id="cancelEditBtn" class="icon-btn">✕</button>
+            </div>
+            
+            <div class="form-content edit-form">
+                <div class="input-group">
+                    <label>Task</label>
+                    <input type="text" id="editTaskInput" class="text-input">
+                </div>
+                
+                <div class="input-group">
+                    <label>Project</label>
+                    <select id="editProjectSelect" class="select-input">
+                        <option value="">Select project</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label>Organization</label>
+                    <select id="editOrgSelect" class="select-input">
+                        <option value="">Select org</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label>Due Date</label>
+                    <input type="date" id="editDueInput" class="text-input">
+                </div>
+                
+                <div class="button-group">
+                    <button id="saveEditBtn" class="primary-btn">Save</button>
+                    <button id="deleteTaskBtn" class="danger-btn">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
